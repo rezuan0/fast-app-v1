@@ -1,7 +1,6 @@
 import os
 import mysql.connector
 import time
-
 from dotenv import load_dotenv
 
 # Wait for MySQL container to start up
@@ -23,6 +22,7 @@ db_config = {
     "password": os.getenv("DB_PASSWORD"),
     "database": os.getenv("DB_NAME"),
 }
+
 
 
 # Establish a database connection

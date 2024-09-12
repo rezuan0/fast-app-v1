@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cp local-env .env
-sudo systemctl restart mysql
+sudo service mysql start
 
 ./shells/run.sh
 
