@@ -1,16 +1,29 @@
+import os
 import mysql.connector
 import time
+
+from dotenv import load_dotenv
 
 # Wait for MySQL container to start up
 time.sleep(5)  # Adjust the delay as needed
 # Database connection configuration
+# db_config = {
+#     "host": "192.168.1.251",
+#     "port": 3306,
+#     "user": "rezu",
+#     "password": "rezu00",
+#     "database": "movieDB",
+# }
+
+load_dotenv()
 db_config = {
-    "host": "192.168.0.109",
-    "port": 3306,
-    "user": "rezu",
-    "password": "rezu00",
-    "database": "movieDB",
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT")),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "database": os.getenv("DB_NAME"),
 }
+
 
 # Establish a database connection
 db_connection = mysql.connector.connect(**db_config)
