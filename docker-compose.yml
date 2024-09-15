@@ -13,6 +13,7 @@ services:
             - "${APP_PORT}:8000"
         command: ["python3", "main.py"]
         volumes:
+            - ./templates:/pyapp/templates
             - $PWD/database.py:/pyapp/database.py
             - $PWD/main.py:/pyapp/main.py
         networks:
