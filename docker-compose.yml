@@ -4,7 +4,7 @@ networks:
 
 services:
     py-app:
-        image: "fast-app:v2"
+        image: "rezuan0/fast-app:v2"
         env_file:
             - $PWD/.env
         container_name: py-app
