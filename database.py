@@ -31,7 +31,8 @@ db_cursor = db_connection.cursor()
 
 
 def search_movies_by_year(year_of_release):
-    db_connection = mysql.connector.connect(**db_config)  # Establish a new database connection
+    # Establish a new database connection
+    db_connection = mysql.connector.connect(**db_config)
     db_cursor = db_connection.cursor()
 
     query = "SELECT * FROM hollywood WHERE year_of_release = %s"
