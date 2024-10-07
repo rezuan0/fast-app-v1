@@ -16,7 +16,9 @@ def home(request: Request):
 def search_movies(request: Request, year_of_release: int = Form(...)):
     results = search_movies_by_year(year_of_release)
     # results = ""
-    return templates.TemplateResponse("index.html", {"request": request, "results": results})
+    return templates.TemplateResponse(
+        "index.html", {"request": request, "results": results}
+    )
 
 
 @app.get("/upload_data")
@@ -26,13 +28,13 @@ def upload_data(request: Request):
 
 @app.post("/upload_data")
 def upload_movie_data_handler(
-        request: Request,
-        movie_name: str = Form(...),
-        year_of_release: int = Form(...),
-        box_office: float = Form(...),
-        director: str = Form(...),
-        producer: str = Form(...),
-        cast: str = Form(...)
+    request: Request,
+    movie_name: str = Form(...),
+    year_of_release: int = Form(...),
+    box_office: float = Form(...),
+    director: str = Form(...),
+    producer: str = Form(...),
+    cast: str = Form(...),
 ):
     upload_movie_data(movie_name, year_of_release, box_office, director, producer, cast)
     return templates.TemplateResponse("upload_data.html", {"request": request})

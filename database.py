@@ -43,9 +43,13 @@ def search_movies_by_year(year_of_release):
     return results
 
 
-def upload_movie_data(movie_name, year_of_release, box_office, director, producer, cast):
-    query = ("INSERT INTO hollywood (movie_name, year_of_release, box_office, director, producer, cast) VALUES (%s, "
-             "%s, %s, %s, %s, %s)")
+def upload_movie_data(
+    movie_name, year_of_release, box_office, director, producer, cast
+):
+    query = (
+        "INSERT INTO hollywood (movie_name, year_of_release, box_office, director, producer, cast) VALUES (%s, "
+        "%s, %s, %s, %s, %s)"
+    )
     values = (movie_name, year_of_release, box_office, director, producer, cast)
     db_cursor.execute(query, values)
     db_connection.commit()
