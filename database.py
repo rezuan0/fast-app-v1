@@ -23,8 +23,6 @@ db_config = {
     "database": os.getenv("DB_NAME"),
 }
 
-
-
 # Establish a database connection
 db_connection = mysql.connector.connect(**db_config)
 db_cursor = db_connection.cursor()
