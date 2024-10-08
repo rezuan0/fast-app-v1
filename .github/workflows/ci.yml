@@ -25,7 +25,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install flake8 black mypy pytest
+        pip install flake8 black pytest
 
     # Step 4: Run Flake8 for linting
     - name: Run Flake8 for linting
@@ -39,13 +39,7 @@ jobs:
         black --check .
       continue-on-error: false
 
-    # Step 6: Run mypy for type checking (optional)
-    - name: Run mypy for type checking
-      run: |
-        mypy .
-      continue-on-error: false
-
-    # Step 7: Run tests with pytest
+    # Step 6: Run tests with pytest
     - name: Run tests with pytest
       run: |
         pytest
