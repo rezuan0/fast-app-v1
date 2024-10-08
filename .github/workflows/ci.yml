@@ -42,5 +42,5 @@ jobs:
     # Step 6: Run tests with pytest
     - name: Run tests with pytest
       run: |
-        pytest
+        pytest --ignore=mysql/db
       continue-on-error: false
